@@ -10,9 +10,11 @@
 
 int main() {
     std::string expression;
+    Calculator calculator;
+
     std::cout << "Enter mathematical expression that you would like to evaluate : \n";
     std::getline(std::cin, expression);
-    Calculator calculator;
+
 
     std::cout << "Post-Fix : ";
     calculator.printPostFix(expression);

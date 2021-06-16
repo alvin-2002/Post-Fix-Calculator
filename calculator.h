@@ -9,6 +9,7 @@
 class Calculator{
     private:
         bool isDigit(char input);
+        bool isDigit(std::string input);
         bool isOperator(std::string input);
         int precedence(std::string symbol);
         double calculate(double firstNum, double secondNum, std::string symbol);
@@ -22,6 +23,10 @@ class Calculator{
 
 bool Calculator :: isDigit(char input){
     return (input >= '0' && input <= '9') || input == '.';
+}
+
+bool Calculator :: isDigit(std::string input){
+    return (input >= "0" && input <= "9");
 }
 
 bool Calculator :: isOperator(std::string input){
@@ -87,7 +92,9 @@ std::vector<std::string> Calculator :: expressionList(std::string input){
         }
     }
     // last digit
-    expressionList.push_back(digits);
+    if (digits != ""){
+        expressionList.push_back(digits);
+    }
 
     return expressionList;
 }
