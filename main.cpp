@@ -15,7 +15,6 @@ int main() {
     std::cout << "Enter mathematical expression that you would like to evaluate : \n";
     std::getline(std::cin, expression);
 
-
     std::cout << "Post-Fix : ";
     calculator.printPostFix(expression);
     std::cout << "Answer = "<< calculator.evaulate(expression) << std::endl;

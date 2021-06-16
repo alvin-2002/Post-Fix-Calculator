@@ -5,11 +5,9 @@
 #ifndef STACK_CALCULATOR_CALCULATOR_H
 #define STACK_CALCULATOR_CALCULATOR_H
 
-
 class Calculator{
     private:
         bool isDigit(char input);
-        bool isDigit(std::string input);
         bool isOperator(std::string input);
         int precedence(std::string symbol);
         double calculate(double firstNum, double secondNum, std::string symbol);
@@ -25,10 +23,6 @@ bool Calculator :: isDigit(char input){
     return (input >= '0' && input <= '9') || input == '.';
 }
 
-bool Calculator :: isDigit(std::string input){
-    return (input >= "0" && input <= "9");
-}
-
 bool Calculator :: isOperator(std::string input){
     return (input == "+" || input == "-" || input == "*" || input == "/" || input == "^");
 }
@@ -37,8 +31,6 @@ int Calculator :: precedence(std::string symbol){
     if (symbol == "+" || symbol == "-") return 1;
     if (symbol == "*" || symbol == "/") return 2;
     if (symbol == "^") return 3;
-
-    return 0;
 }
 
 double Calculator :: calculate(double firstNum, double secondNum, std::string symbol){
@@ -124,7 +116,6 @@ std::vector<std::string> Calculator :: getPostFix(std::string input){
                 // associativity of the operator is from left to right (+, -, *, /)
                 else{
                     while (!operatorSymbols.empty() && (precedence(inputExpression[i]) <= precedence(operatorSymbols.top()))){
-//                        if (precedence(inputExpression[i]) > precedence(operatorSymbols.top())) break;
                         postfixNotation.push_back(operatorSymbols.top());
                         operatorSymbols.pop();
                     }
