@@ -1,3 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\Stack_Calculator.dir/objects.a
-C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\ar.exe cr CMakeFiles\Stack_Calculator.dir/objects.a @CMakeFiles\Stack_Calculator.dir\objects1.rsp
-C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE -g   -Wl,--whole-archive CMakeFiles\Stack_Calculator.dir/objects.a -Wl,--no-whole-archive  -o Stack_Calculator.exe -Wl,--out-implib,libStack_Calculator.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Stack_Calculator.dir\linklibs.rsp
